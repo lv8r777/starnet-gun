@@ -79,8 +79,12 @@
   "pitchwriter": "<svg viewBox=\"0 0 32 32\" fill=\"currentColor\" shape-rendering=\"crispEdges\" aria-hidden=\"true\" focusable=\"false\"><g style=\"color:color-mix(in srgb, currentColor 28%, black)\" transform=\"translate(1 1)\"><path d=\"M3 5H29V24H18V27H24V29H8V27H14V24H3Z\"/></g><path d=\"M3 5H29V24H18V27H24V29H8V27H14V24H3Z\"/><g style=\"color:color-mix(in srgb, currentColor 42%, white)\"><path d=\"M3 5H29V7H6V22H3Z M8 27H24V28H8Z\"/></g><g style=\"color:color-mix(in srgb, currentColor 28%, black)\"><path d=\"M7 18H10V15H13V12H17V14H20V10H18V8H25V15H23V12H22V16H18V18H15V16H13V18H10V20H7Z\"/></g></svg>",
   "herald": "<svg viewBox=\"0 0 32 32\" fill=\"currentColor\" shape-rendering=\"crispEdges\" aria-hidden=\"true\" focusable=\"false\"><g style=\"color:color-mix(in srgb, currentColor 28%, black)\" transform=\"translate(1 1)\"><path d=\"M3 4H25V8H29V27H26V29H6V27H3Z\"/></g><path d=\"M3 4H25V8H29V27H26V29H6V27H3Z\"/><g style=\"color:color-mix(in srgb, currentColor 42%, white)\"><path d=\"M3 4H25V6H6V25H3Z M25 8H27V25H25Z\"/></g><g style=\"color:color-mix(in srgb, currentColor 28%, black)\"><path d=\"M8 9H21V12H8Z M8 16H14V22H8Z M17 16H21V18H17Z M17 21H21V23H17Z M8 25H21V27H8Z\"/></g></svg>"
 };
+  // GUN HQ crew (fork-owned, 2026-11-13): Maria and Gus wear the engineer and video-producer seals.
+  ICONS.maria = ICONS.engineer;
+  ICONS.gus = ICONS.producer;
 
   const CODE = {
+    maria: 'MRA', gus: 'GUS',   // GUN HQ crew (fork-owned)
     chief: 'CHF', engineer: 'ENG', researcher: 'RES', reviewer: 'REV', operator: 'AUT',
     analyst: 'ANL', scout: 'SCT', archivist: 'ARV', designer: 'DSN',
     broker: 'DLF', tutor: 'TCH', auditor: 'SEC', translator: 'XLT', herald: 'DGS',

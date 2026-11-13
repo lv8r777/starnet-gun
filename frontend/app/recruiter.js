@@ -81,11 +81,14 @@
   // recommend(): the whole matcher. Returns { warm:boolean, items:[{ classId, why, confidence, evidence }] }.
   // opts = { worksignal (raw histogram model), profile ({score,explain} or null), dossier ({goals,pain,ambition}
   //          belief-text arrays), roster (occupied specialtyIds []), catalog (Specialties.builtins() []), now }.
+  // GUN HQ fork (2026-11-13): the GUN crew seats (maria, gus) front named agents, not generic hires, so the
+  // learned-work recommender never pitches them; they are picked on purpose from the top of the bay.
+  const GUN_CREW_IDS = new Set(['maria', 'gus']);
   function recommend(opts) {
     opts = opts || {};
     const now = Number.isFinite(opts.now) ? opts.now : 0;
     const sig = opts.worksignal || null;
-    const catalog = Array.isArray(opts.catalog) ? opts.catalog : [];
+    const catalog = (Array.isArray(opts.catalog) ? opts.catalog : []).filter(c => !GUN_CREW_IDS.has(c && c.id));
     const rostered = new Set((opts.roster || []).filter(Boolean));
     const preferenceModel = opts.preferenceModel && typeof opts.preferenceModel === 'object' ? opts.preferenceModel : null;
     const preferenceFor = (cls) => {

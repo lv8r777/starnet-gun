@@ -21,7 +21,13 @@ Every user-facing name says GUN HeadQuarters, written exactly that way (capital 
 ### Phase 2 (Maria, when LV8R wants it)
 - Tauri `productName` and `install_manifest.rs::PRODUCT_NAME` change to "GUN HeadQuarters". The desktop bundle and updater feed then need to point at our own releases, not starnetos.com.
 - Overseer and system-prompt wording, plus the website.
-- Real logo art (reads GUN HQ).
+- Real logo art (reads GUN HQ). Logo input from LV8R (2026-11-13): "the other font type was fire, but whatever it's fine i don't really care." Read as: he liked the original StarNet wordmark lettering over the VT323 placeholder. Not a blocker; use it as the starting brief when the real logo is drawn.
+
+## GUN crew in the Recruitment Bay (2026-11-13)
+- `shared/specialties.js` opens BUILTINS with two fork-owned classes: `maria` (Maria, GUN Tech) and `gus` (Gus, GUN Media). Summoning one from the bay creates a seat whose purpose points at the real soul files in lv8r777/Maria and whose standing orders hand work to the real body (`claude -p` in the GUN HQ repo, or a work order). Seats front the agents; they never copy them (office/starnet/CREW.md).
+- Seals reuse the engineer and producer emblems (`classicons.js`, codes MRA / GUS). `recruiter.js` keeps both out of the learned-work recommender, so they are only ever picked on purpose.
+- `test/class-loadouts.test.js` pins the roster as the 35 upstream classes plus `GUN_CREW`, with the GUN crew first.
+- The sidecar reads the class list at boot, so RAVEN's `team.summon` sees the new classes only after a sidecar restart. The bay sees them on a window reload.
 
 ## Running
 The live station is `node sidecar/index.js` from this checkout on 127.0.0.1:8787. The frontend has no build step, so a window reload picks up frontend changes. Keep `LICENSE` and the upstream copyright notice; MIT requires it.

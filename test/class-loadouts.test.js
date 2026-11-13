@@ -81,15 +81,18 @@ for (const b of CATALOG) {
    near-duplicate would shadow them in the scout's matcher. curator and muse were deliberately KEPT (distinct
    jobs, not duplicates). */
 const classicons = require('../frontend/app/classicons.js');
-A.eq(builtins.length, 35, 'the curated roster ships exactly 35 classes');
+// GUN HQ fork (2026-11-13): the GUN crew (maria, gus) opens the roster ahead of the 35 upstream classes.
+const GUN_CREW = ['maria', 'gus'];
+A.eq(builtins.length, 35 + GUN_CREW.length, 'the curated roster ships the 35 upstream classes plus the GUN crew');
 A.eq(archetypes.length, 20, 'the archetype pool holds the 20 deep cuts');
 const CURATED = ['strategist', 'chief', 'opportunist', 'researcher', 'analyst', 'marketer',
   'copywriter', 'webdesigner', 'publisher', 'producer', 'writer', 'ghostwriter', 'prospector',
   'negotiator', 'treasurer', 'paralegal', 'support', 'envoy', 'registrar', 'jobhunter', 'tutor',
   'taskmaster', 'provisioner', 'sentinel', 'scout', 'nightwatch', 'foreman', 'pilot', 'harvester',
-  'drafter', 'engineer', 'dbhelper', 'apptester', 'auditor', 'deployer'];
-A.eq(builtins.map(b => b.id).sort().join(','), CURATED.slice().sort().join(','), 'the curated roster is exactly the 35 consolidated classes');
-A.eq(builtins[0].id, 'strategist', 'the strategist is the roster\'s first card (the bay\'s default focus)');
+  'drafter', 'engineer', 'dbhelper', 'apptester', 'auditor', 'deployer'].concat(GUN_CREW);
+A.eq(builtins.map(b => b.id).sort().join(','), CURATED.slice().sort().join(','), 'the curated roster is exactly the 35 consolidated classes plus the GUN crew');
+A.eq(builtins.slice(0, GUN_CREW.length).map(b => b.id), GUN_CREW, 'the GUN crew opens the roster (GUN HQ fork)');
+A.eq(builtins[GUN_CREW.length].id, 'strategist', 'the strategist is the first upstream card');
 // ROSTER ORDER IS A PRODUCT DECISION (Andrew, 2026-08-03): the roster opens on TRADITIONAL jobs and the
 // build-your-app block sits at the BOTTOM. A first insertion put the technical classes at position 7 and he
 // rejected it on sight — "i like the previous setup as it was more traditional jobs, and towards the bottom
