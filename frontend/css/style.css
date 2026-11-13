@@ -391,10 +391,10 @@ body:has(#screen-game.active):not(.refit-on) #logo { display: flex; }
    --preset=solid, which is the legible floor.
    No CSS glow/drop-shadow — removed per Andrew, and that still stands. */
 .logo-img {
-  height: 30px; aspect-ratio: 946 / 160; display: block;
+  height: 30px; aspect-ratio: 2348 / 740; /* GUN HQ wordmark viewBox */ display: block;
   background-color: var(--ph);
-  -webkit-mask: url(../assets/brand/starnet-wordmark.svg) center / contain no-repeat;
-          mask: url(../assets/brand/starnet-wordmark.svg) center / contain no-repeat;
+  -webkit-mask: url(../assets/brand/gunhq-wordmark.svg) center / contain no-repeat;
+          mask: url(../assets/brand/gunhq-wordmark.svg) center / contain no-repeat;
 }
 /* one confident wordmark in the chrome — the big ASCII logo lives on the
    title screen where it has room to read (salvaged from agent/design-system) */
