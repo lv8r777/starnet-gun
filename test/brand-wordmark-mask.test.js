@@ -73,8 +73,8 @@ const markEl = (html.match(/<[a-z]+[^>]*class="logo-img"[^>]*>/) || [])[0] || ''
 A.ok(markEl, 'index.html still mounts an element with class="logo-img"');
 A.ok(/^<span/.test(markEl),
   'the mark is a <span> — an <img> cannot take var(--ph), and it was the img that had no size until it decoded');
-A.ok(/aria-label="GUN HeadQuarters"/.test(markEl) && /role="img"/.test(markEl),
-  'the masked span still names itself GUN HeadQuarters for assistive tech (a background image has no alt text)');
+A.ok(/aria-label="GUN HQ"/.test(markEl) && /role="img"/.test(markEl),
+  'the masked span still names itself GUN HQ (what the mark reads) for assistive tech (a background image has no alt text)');
 
 // ---- 4. z-order: under the CRT glass, over the screen ---------------------------------------
 const logoRule = (css.match(/#logo\s*\{[^}]*\}/) || [])[0] || '';
